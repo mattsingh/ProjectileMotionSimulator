@@ -7,14 +7,16 @@ public class Simulation {
     private double time;
     private double vInit;
     private double angle;
+    private double acceleration;
     private double heightInitial;
     private double distance;
     private JFreeChart chart;
 
-    public Simulation(double time, double vInit, double angle, double heightInitial, double distance) {
+    public Simulation(double time, double vInit, double angle, double acceleration, double heightInitial, double distance) {
         this.time = time;
         this.vInit = vInit;
         this.angle = angle;
+        this.acceleration = acceleration;
         this.heightInitial = heightInitial;
         this.distance = distance;
     }
