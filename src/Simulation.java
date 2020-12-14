@@ -15,13 +15,13 @@ public class Simulation {
     private double distance;
     private JFreeChart chart;
 
-    public Simulation(double time, double vInit, double angle, double acceleration, double heightInitial) {
-        this.time = time;
+    public Simulation(double vInit, double angle, double acceleration, double heightInitial) {
         this.vInit = vInit;
         this.angle = Math.toRadians(angle);
         this.acceleration = Math.abs(acceleration);
         this.heightInitial = heightInitial;
-        this.distance = getPositionTime(vInit * Math.cos(angle), time);
+        this.time = quadraticFormula(-this.acceleration / 2, this.vInit * Math.sin(this.angle), this.heightInitial);
+        this.distance = getPositionTime(this.vInit * Math.cos(this.angle), time);
 
         chart = ChartFactory.createXYLineChart(
                 null,
@@ -37,7 +37,7 @@ public class Simulation {
 
         double xPosition;
         double yPosition = 0;
-        for (double i = 0; yPosition >= 0; i += time / 100) {
+        for (double i = 0; i <= time; i += time / 1000) {
             xPosition = getPositionTime(vInit * Math.cos(angle), i);
             yPosition = getPositionTime(heightInitial, vInit * Math.sin(angle), acceleration, i);
             if (yPosition >= 0)
@@ -49,11 +49,23 @@ public class Simulation {
     }
 
     private static double getPositionTime(double heightInitial, double velocity, double acceleration, double time) {
-        return  heightInitial + velocity * time + (acceleration * Math.pow(time, 2)) / 2;
+        return  heightInitial + velocity * time + (-acceleration * Math.pow(time, 2)) / 2;
     }
 
     private static double getPositionTime(double velocity, double time) {
         return velocity * time;
+    }
+
+    private static double quadraticFormula(double a, double b, double c) {
+        return (-b - Math.sqrt(b * b - 4 * a * c)) / (2 * a);
+    }
+
+    public double getTime() {
+        return time;
+    }
+
+    public double getDistance() {
+        return distance;
     }
 
     public ChartPanel getPanel() {
