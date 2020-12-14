@@ -29,8 +29,8 @@ public class App extends JFrame{
 
         btnGraph.addMouseListener(new MouseAdapter() {
             @Override
-            public void mouseClicked(MouseEvent e) {
-                super.mouseClicked(e);
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
                 graphButtonClicked();
             }
         });
