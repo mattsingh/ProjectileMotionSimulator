@@ -36,8 +36,27 @@ public class App extends JFrame{
         });
     }
 
+    public double getInitialVelocity() {
+        return Double.parseDouble(txtInitialVelocity.getText());
+    }
+
+    public double getAngle() {
+        return Double.parseDouble(txtAngle.getText());
+    }
+
+    public double getAcceleration() {
+        return Double.parseDouble(txtAcceleration.getText());
+    }
+
+    public double getInitialHeight() {
+        return Double.parseDouble(txtInitialHeight.getText());
+    }
+
     private void graphButtonClicked() {
-        pnlChart.add(Test.getPanel());
+        Simulation sim = new Simulation(getInitialVelocity(), getAngle(),  getAcceleration(), getInitialHeight());
+        pnlChart.add(sim.getPanel());
+        txtTime.setText(sim.getTime() + "");
+        txtDistance.setText(sim.getDistance() + "");
         pack();
     }
 
