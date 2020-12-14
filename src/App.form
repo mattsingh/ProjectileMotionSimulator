@@ -20,38 +20,6 @@
         <border type="none"/>
         <children/>
       </grid>
-      <component id="9937f" class="javax.swing.JLabel" binding="lblTime">
-        <constraints>
-          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Time (s)"/>
-        </properties>
-      </component>
-      <component id="95293" class="javax.swing.JTextField" binding="txtTime">
-        <constraints>
-          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="-1"/>
-          </grid>
-        </constraints>
-        <properties/>
-      </component>
-      <component id="e7ff9" class="javax.swing.JLabel" binding="lblInitialVelocity">
-        <constraints>
-          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Initial Velocity (m/s)"/>
-        </properties>
-      </component>
-      <component id="afb52" class="javax.swing.JTextField" binding="txtInitialVelocity">
-        <constraints>
-          <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="-1"/>
-          </grid>
-        </constraints>
-        <properties/>
-      </component>
       <component id="d2d4a" class="javax.swing.JLabel" binding="lblAcceleration">
         <constraints>
           <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
@@ -83,7 +51,7 @@
           <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Angle"/>
+          <text value="Angle (degrees)"/>
         </properties>
       </component>
       <component id="53f40" class="javax.swing.JButton" binding="btnGraph">
@@ -100,22 +68,8 @@
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
-        <properties/>
-      </component>
-      <component id="4d36" class="javax.swing.JTextField" binding="txtInitialHeight">
-        <constraints>
-          <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="-1"/>
-          </grid>
-        </constraints>
-        <properties/>
-      </component>
-      <component id="dcd4e" class="javax.swing.JLabel" binding="lblInitialHeight">
-        <constraints>
-          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
         <properties>
-          <text value="Initial Height (m)"/>
+          <editable value="false"/>
         </properties>
       </component>
       <component id="cedd9" class="javax.swing.JLabel" binding="lblDistance">
@@ -124,6 +78,58 @@
         </constraints>
         <properties>
           <text value="Distance (m)"/>
+        </properties>
+      </component>
+      <component id="e7ff9" class="javax.swing.JLabel" binding="lblInitialVelocity">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Initial Velocity (m/s)"/>
+        </properties>
+      </component>
+      <component id="afb52" class="javax.swing.JTextField" binding="txtInitialVelocity">
+        <constraints>
+          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="4d36" class="javax.swing.JTextField" binding="txtInitialHeight">
+        <constraints>
+          <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value="0"/>
+        </properties>
+      </component>
+      <component id="dcd4e" class="javax.swing.JLabel" binding="lblInitialHeight">
+        <constraints>
+          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Initial Height (m)"/>
+        </properties>
+      </component>
+      <component id="9937f" class="javax.swing.JLabel" binding="lblTime">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Time (s)"/>
+        </properties>
+      </component>
+      <component id="95293" class="javax.swing.JTextField" binding="txtTime">
+        <constraints>
+          <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <editable value="false"/>
         </properties>
       </component>
     </children>
