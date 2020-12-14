@@ -15,13 +15,13 @@ public class Simulation {
     private double distance;
     private JFreeChart chart;
 
-    public Simulation(double time, double vInit, double angle, double acceleration, double heightInitial, double distance) {
+    public Simulation(double time, double vInit, double angle, double acceleration, double heightInitial) {
         this.time = time;
         this.vInit = vInit;
-        this.angle = angle;
-        this.acceleration = -1 * Math.abs(acceleration);
+        this.angle = Math.toRadians(angle);
+        this.acceleration = Math.abs(acceleration);
         this.heightInitial = heightInitial;
-        this.distance = distance;
+        this.distance = getPositionTime(vInit * Math.cos(angle), time);
 
         chart = ChartFactory.createXYLineChart(
                 null,
@@ -40,7 +40,8 @@ public class Simulation {
         for (double i = 0; yPosition >= 0; i += time / 100) {
             xPosition = getPositionTime(vInit * Math.cos(angle), i);
             yPosition = getPositionTime(heightInitial, vInit * Math.sin(angle), acceleration, i);
-            series.add(xPosition, yPosition);
+            if (yPosition >= 0)
+                series.add(xPosition, yPosition);
         }
 
         XYSeriesCollection dataset = new XYSeriesCollection(series);
