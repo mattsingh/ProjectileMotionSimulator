@@ -21,7 +21,7 @@ public class Simulation {
         this.acceleration = Math.abs(acceleration);
         this.heightInitial = heightInitial;
         this.time = quadraticFormula(-this.acceleration / 2, this.vInit * Math.sin(this.angle), this.heightInitial);
-        this.distance = getPositionTime(this.vInit * Math.cos(this.angle), time);
+        this.distance = getXPositionTime(this.vInit * Math.cos(this.angle), time);
 
         chart = ChartFactory.createXYLineChart(
                 null,
@@ -38,8 +38,8 @@ public class Simulation {
         double xPosition;
         double yPosition = 0;
         for (double i = 0; i <= time; i += time / 1000) {
-            xPosition = getPositionTime(vInit * Math.cos(angle), i);
-            yPosition = getPositionTime(heightInitial, vInit * Math.sin(angle), acceleration, i);
+            xPosition = getXPositionTime(vInit * Math.cos(angle), i);
+            yPosition = getYPositionTime(heightInitial, vInit * Math.sin(angle), acceleration, i);
             if (yPosition >= 0)
                 series.add(xPosition, yPosition);
         }
@@ -48,11 +48,11 @@ public class Simulation {
         return dataset;
     }
 
-    private static double getPositionTime(double heightInitial, double velocity, double acceleration, double time) {
+    private static double getYPositionTime(double heightInitial, double velocity, double acceleration, double time) {
         return  heightInitial + velocity * time + (-acceleration * Math.pow(time, 2)) / 2;
     }
 
-    private static double getPositionTime(double velocity, double time) {
+    private static double getXPositionTime(double velocity, double time) {
         return velocity * time;
     }
 
